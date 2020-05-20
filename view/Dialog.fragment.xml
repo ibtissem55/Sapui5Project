@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog id="helloDialog" title="Import Requirement from excel file"  class="sapUiResponsivePadding"
+	resizable="true" draggable="true">
+		<l:VerticalLayout>
+				<Label text="Solution (required)" labelFor="input-a" class="sapUiResponsiveMargin"/>
+			<Select forceSelection="false" class="sapUiResponsiveMargin">
+				<core:Item text="hello"/>
+			</Select>
+				<Label text="Excel file" labelFor="input-a"  class="sapUiResponsiveMargin" />
+			<u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" buttonOnly="false" fileType="xlsx,xls,csv"
+				icon="sap-icon://excel-attachment" iconOnly="true" uploadOnChange="true" class="sapUiResponsiveMargin"/>
+		</l:VerticalLayout>
+		<beginButton>
+			<Button text="Import" press="handleUploadPress" />
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCloseDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

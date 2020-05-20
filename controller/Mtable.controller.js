@@ -62,6 +62,19 @@ sap.ui.define([
 					reader.readAsArrayBuffer(file);
 				}
 			}
+		},
+    _getDialog : function () {
+         if (!this._oDialog) {
+            this._oDialog = sap.ui.xmlfragment("smartTable.SmartTable.view.Dialog",this);
+            this.getView().addDependent(this._oDialog);
+         }
+         return this._oDialog;
+      },
+     onOpenDialog : function () {
+         this._getDialog().open();
+      },
+	onCloseDialog : function () {
+			this._getDialog().close();
 		}
 	});
 });
